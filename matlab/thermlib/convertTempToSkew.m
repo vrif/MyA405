@@ -12,7 +12,7 @@ function skewX=convertTempToSkew(Temp,press,skew)
      % upward.  The temp(i,j) matrix for
      % points near that line will be 5, and a contour will be labeled
      % with the 5 label
-          if(press > 1000);
+     if(press > 1000);
        fprintf('press %f is more than 1000 hPa, expecting mililbars\n',press)
      end
      if(Temp > 100);

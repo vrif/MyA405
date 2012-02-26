@@ -2,12 +2,8 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-from constants import constants
-from convertSkewToTemp import convertSkewToTemp
-from theta import theta
-from wsat import wsat
-from thetaes import thetaes
-from convertTempToSkew import convertTempToSkew
+from constants import constants as c
+from new_thermo import convertSkewToTemp,convertTempToSkew,theta,wsat,thetaes
 
 def convecSkew(figNum):
       """       
@@ -17,18 +13,18 @@ def convecSkew(figNum):
        skewT logp thermodiagram.
       Output: skew=30.
       """
-      c = constants();
-      plt.figure(figNum);
-      plt.clf();
+      fig=plt.figure(figNum)
+      fig.clf()
+      ax1=fig.add_subplot(111)
       yplot = range(1000,190,-10)
       xplot = range(-300,-139)
       pvals = np.size(yplot)
       tvals = np.size(xplot)
-      temp = np.zeros([pvals, tvals]);
-      theTheta = np.zeros([pvals, tvals]);
-      ws = np.zeros([pvals, tvals]);
-      theThetae = np.zeros([pvals, tvals]);      
-      skew = 30; #skewness factor (deg C)
+      temp = np.zeros([pvals, tvals])
+      theTheta = np.zeros([pvals, tvals])
+      ws = np.zeros([pvals, tvals])
+      theThetae = np.zeros([pvals, tvals])      
+      skew = 30 #skewness factor (deg C)
 
       # lay down a reference grid that labels xplot,yplot points 
       # in the new (skewT-lnP) coordinate system .
@@ -45,12 +41,12 @@ def convecSkew(figNum):
                   # coordinate, as it is still pressure.
                   iInd = yplot.index(i)
                   jInd = xplot.index(j)
-                  temp[iInd, jInd] = convertSkewToTemp(j, i, skew);
-                  Tk = c.Tc + temp[iInd, jInd];
-                  pressPa = i * 100.;
-                  theTheta[iInd, jInd] = theta(Tk, pressPa);
-                  ws[iInd, jInd] = wsat(Tk, pressPa);
-                  theThetae[iInd, jInd] = thetaes(Tk, pressPa);
+                  temp[iInd, jInd] = convertSkewToTemp(j, i, skew)
+                  Tk = c.Tc + temp[iInd, jInd]
+                  pressPa = i * 100.
+                  theTheta[iInd, jInd] = theta(Tk, pressPa)
+                  ws[iInd, jInd] = wsat(Tk, pressPa)
+                  theThetae[iInd, jInd] = thetaes(Tk, pressPa)
                   
       #
       # Contour the temperature matrix.
@@ -58,71 +54,77 @@ def convecSkew(figNum):
 
       # First, make sure that all plotted lines are solid.
       mpl.rcParams['contour.negative_linestyle'] = 'solid'
-      tempLabels = range(-40, 50, 10);
-      output1 = plt.contour(xplot, yplot, temp, tempLabels, \
+      tempLabels = range(-40, 50, 10)
+      tempLevs = ax1.contour(xplot, yplot, temp, tempLabels, \
                             colors='k')
       
       #
       # Customize the plot
       #
-      
-      plt.setp(plt.gca(), yscale='log')
+      ax1.set_yscale('log')
       locs = np.array(range(100, 1100, 100))
       labels = locs
-      plt.yticks(locs, labels) # Conventionally labels semilog graph.
-      plt.setp(plt.gca(), ybound=(200, 1000))
-      plt.setp(plt.getp(plt.gca(), 'xticklabels'), fontweight='bold')
-      plt.setp(plt.getp(plt.gca(),'yticklabels'), fontweight='bold')
-      plt.grid(True)
-      plt.setp(plt.gca().get_xgridlines(), visible=False)
-      plt.hold(True);
+      ax1.set_yticks(locs)
+      ax1.set_yticklabels(labels) # Conventionally labels semilog graph.
+      ax1.set_ybound((200, 1000))
+      plt.setp(ax1.get_xticklabels(), weight='bold')
+      plt.setp(ax1.get_yticklabels(), weight='bold')
+      ax1.yaxis.grid(True)
+
       
-      thetaLabels = range(200, 380, 10);
-      output2 = plt.contour(xplot, yplot, theTheta, thetaLabels, \
-                        colors='b');
+      thetaLabels = range(200, 380, 10)
+      thetaLevs = ax1.contour(xplot, yplot, theTheta, thetaLabels, \
+                        colors='b')
 
-      wsLabels = range(6, 24, 2);
-      output3 = plt.contour(xplot, yplot, (ws * 1.e3), wsLabels, \
-                        colors='g');
+      wsLabels = range(6, 24, 2)
+      wsLevs = ax1.contour(xplot, yplot, (ws * 1.e3), wsLabels, \
+                        colors='g')
 
-      thetaeLabels = range(250, 380, 10);
-      output4 = plt.contour(xplot, yplot, theThetae, thetaeLabels, \
-                        colors='r'); 
+      thetaeLabels = np.arange(250, 380, 10)
+      thetaeLevs = ax1.contour(xplot, yplot, theThetae, thetaeLabels, \
+                        colors='r') 
       
       # Transform the temperature,dewpoint from data coords to
       # plotting coords.
-      plt.title('skew T - lnp chart');
-      plt.ylabel('pressure (hPa)');
-      plt.xlabel('temperature (deg C)');
+      ax1.set_title('skew T - lnp chart')
+      ax1.set_ylabel('pressure (hPa)')
+      ax1.set_xlabel('temperature (deg C)')
 
       #
       # Crop image to a more usable size
       #    
       
-      TempTickLabels = range(5, 35, 5);
-      TempTickCoords = TempTickLabels;
-      skewTickCoords = convertTempToSkew(TempTickCoords, 1.e3, skew);
-      plt.xticks(skewTickCoords, TempTickLabels)
-      skewLimits = convertTempToSkew([5, 30], 1.e3, skew);
-      plt.axis([skewLimits[0], skewLimits[1], 600, 1.e3]);
+      TempTickLabels = range(5, 35, 5)
+      TempTickCoords = TempTickLabels
+      skewTickCoords = convertTempToSkew(TempTickCoords, 1.e3, skew)
+      ax1.set_xticks(skewTickCoords)
+      ax1.set_xticklabels(TempTickLabels)
+      skewLimits = convertTempToSkew([5, 30], 1.e3, skew)
+      ax1.axis([skewLimits[0], skewLimits[1], 600, 1.e3])
       
       #
       # Create line labels
       #
 
       fntsz = 9 # Handle for 'fontsize' of the line label.
-      ovrlp = 1 # Handle for 'inline'. Any integer other than 0
+      ovrlp = True # Handle for 'inline'. Any integer other than 0
                 # creates a white space around the label.
                 
-      plt.clabel(output1, inline=ovrlp, fmt='%1d', fontsize=fntsz);
-      plt.clabel(output2, inline=ovrlp, fmt='%1d', fontsize=fntsz);
-      plt.clabel(output3, inline=ovrlp, fmt='%1d', fontsize=fntsz);
-      plt.clabel(output4, inline=ovrlp, fmt='%1d', fontsize=fntsz);
-
+      thetaeLevs.clabel(thetaeLabels, inline=ovrlp, fmt='%5d', fontsize=fntsz,use_clabeltext=True)
+      tempLevs.clabel(inline=ovrlp, fmt='%2d', fontsize=fntsz,use_clabeltext=True)
+      thetaLevs.clabel(inline=ovrlp, fmt='%5d', fontsize=fntsz,use_clabeltext=True)
+      wsLevs.clabel(inline=ovrlp, fmt='%2d', fontsize=fntsz,use_clabeltext=True)
+      print thetaeLabels
       #
       # Flip the y axis
       #
       
-      plt.setp(plt.gca(), ylim=plt.gca().get_ylim()[::-1])
+      ax1.invert_yaxis()
+      ax1.figure.canvas.draw()
       
-      return skew
+      return skew,thetaeLevs,thetaeLabels
+
+if __name__== "__main__":
+      skew,thetaeLevs,thetaeLabels=convecSkew(1)
+      plt.show()
+      

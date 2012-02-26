@@ -3,6 +3,7 @@ contains two functions: findWvWl and islist..
 """
 
 import numpy as np
+import matplotlib.cbook as cbook
 
 from wsat import wsat
 
@@ -47,17 +48,17 @@ def findWvWl(T, wT, p):
     AssertionError: A vector is not an acceptable input
     
     """
-    args = (T, wT, p);
+    args = (T, wT, p)
     assert islist(*args) is False , \
            'A vector is not an acceptable input'
     
-    wsVal = wsat(T, p);
+    wsVal = wsat(T, p)
     if wsVal > wT: #unsaturated
-        wv = wT;
-        wl = 0;
+        wv = wT
+        wl = 0
     else:  #saturated
-        wv = wsVal;
-        wl = wT - wv;
+        wv = wsVal
+        wl = wT - wv
     return wv, wl
 
 

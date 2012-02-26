@@ -1,4 +1,4 @@
-class constants():
+class constants:
    """ 
    A list of constants relevant to atmospheric science.
 
