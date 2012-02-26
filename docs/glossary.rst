@@ -60,7 +60,7 @@ ________
    virtual temperature 
      *symbol*: :math:`T_v` --
      *units*: :math:`K` --
-     *Notes*: --
+     *Notes*: `vapor notes`_ --
      *Text*: p. 66
 
      *Definition*: The temperature of dry air at t7he pressure and
@@ -69,7 +69,7 @@ ________
    virtual potential temperature
      *symbol*: :math:`\theta_v` --
      *units*:`K` --
-     *Notes*: --
+     *Notes*: `vapor notes`_ --
      *Text*:  --
 
      *Definition*: The potential temperature of dry air at the density
