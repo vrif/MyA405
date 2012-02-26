@@ -56,6 +56,7 @@ ________
 
      *Definition*: Otherwise know as the saturation mixing ratio. 
      The ratio of the mass of saturated water vapor over mass of dry air.
+     i.e. :math:`e_{sat}/p_{dry}`
 
    virtual temperature 
      *symbol*: :math:`T_v` --
