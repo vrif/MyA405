@@ -67,3 +67,18 @@ ________
      *Text*: 
      *Definition*: `The potential temperature of dry air at the density of a sample of moist air.`
 
+   enthalpy
+     *symbol*: :math:`g` --
+     *units*: :math:`J`  --
+     *Notes*: `the first law and heat capacity notes`_ --
+     *Text*: p. 95-96
+     *Definition*: `A measure of the total energy of a thermodynamic system. `
+
+
+
+   wet-bulb temperature
+     *symbol*: :math:`\theta_e_w` --
+     *units*: K --
+     *Notes*: ` `_ -- 
+     *Text*: p. 83-84
+     *Definition*: `A temperature measurement that reflects the physical properties of a system with a mixture of air and water vapor. It is the lowest temperature that can be reached by the evaporation of water only.  `
