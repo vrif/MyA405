@@ -12,11 +12,13 @@ ________
      *units*: :math:`Pa`  -- 
      *Notes*: `vapor notes`_ --  
      *Text*: p. 80-82
-	 *Definition*: `Otherwise know as the saturation vapor pressure. 
-		The pressure exerted by the water vapor at the point of saturation.
-		Saturation is defined when the rate of condensation is equal to the rate of evaporation.`
 
-    entropy
+     *Definition*: Otherwise known as the saturation vapor pressure.
+     The pressure exerted by the water vapor at the point of
+     saturation.  Saturation is defined when the rate of
+     condensation is equal to the rate of evaporation.
+
+   entropy
      *symbol*: :math:`s` --
      *units*: :math:`J kg^{-1} K^{-1}`  -- 
      *Notes*: `entropy and equivalent temperature notes`_ --  
@@ -34,10 +36,11 @@ ________
      *units*: J/kg --
      *Notes*: `internal energy notes`_ -- 
      *Text*: p. 72
+
      *Definition*: Kinetic and potential energy of a system's molecules and
-        atoms (doesn't count the kinetic energy of the system moving
-        as a unit, or the potential energy due to movement in an
-        external gravitational or electromagnetic field
+     atoms (doesn't count the kinetic energy of the system moving
+     as a unit, or the potential energy due to movement in an
+     external gravitational or electromagnetic field)
 
    moist static energy
      *symbol*: :math:`h_m` or :math:`h_{mse}` --
@@ -50,20 +53,25 @@ ________
      *units*: :math:`kg/kg`  -- 
      *Notes*: `vapor notes`_ --  
      *Text*: p. 82
-	 *Definition*: `Otherwise know as the saturation mixing ratio. 
-		The ratio of the mass of saturated water vapor over mass of dry air.`
+
+     *Definition*: Otherwise know as the saturation mixing ratio. 
+     The ratio of the mass of saturated water vapor over mass of dry air.
 
    virtual temperature 
-     *symbol*: :math: `T_v' --
-     *units*: :math: `K` --
+     *symbol*: :math:`T_v` --
+     *units*: :math:`K` --
      *Notes*: 
      *Text*: p. 66
-     *Definition*: `The temperature of dry air at the pressure and density of a sample of moist air.`
+
+     *Definition*: The temperature of dry air at t7he pressure and
+     density of a sample of moist air.
 
    virtual potential temperature
-     *symbol*: :math: `\theta_v` --
-     *units*: `K` --
+     *symbol*: :math:`\theta_v` --
+     *units*:`K` --
      *Notes*: 
      *Text*: 
-     *Definition*: `The potential temperature of dry air at the density of a sample of moist air.`
+
+     *Definition*: The potential temperature of dry air at the density
+     of a sample of moist air.`
 
