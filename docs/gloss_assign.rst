@@ -1,4 +1,7 @@
-glossary assignment
+.. _glossary_assignment:
+
+
+Glossary Assignment
 +++++++++++++++++++
 
 
