@@ -49,6 +49,27 @@ ________
      *Notes*: `entropy and equivalent temperature notes`_ -- 
      *Text*: p. 85
 
+   helmholtz free energy
+     *symbol*: :math:`f` --
+     *units*: :math:`J`  -- 
+     *Notes*: --  
+     *Text*: p. 111
+
+     *Definition*: Thermodynamic potential that measures the 
+     "useful" work obtainable from a closed thernodynamic system
+     at a constant tempreature and volume.
+
+   helmholtz free energy
+     *symbol*: :math: `f` --
+     *units*: J --
+     *Text*: p 111 (see also any statistical or thermal physics text book)
+
+     *Definition*:  :math:`f \equiv u - Ts` where u is the internal energy, T is
+     the temperature and s is the entropy (see above definition). When 
+     considering energy conservation of one or more systems at a constant 
+     temperature it is more useful to look at the Free Energy rather than the
+     Internal Energy.
+
    internal energy
      *symbol*: :math:`u` --
      *units*: J/kg --
@@ -65,6 +86,13 @@ ________
      *units*: :math:`J kg^{-1}`  -- 
      *Notes*: `moist static energy notes`_
      *Text*: p. 86
+
+   quadratic degree of freedom
+     *Definition*: A degree of freedom is quadratic if the energy terms 
+     associated to this degree of freedom can be written as:
+     E = :math:`aX^2 + bXY`
+     Where the square on the X term indicates the quadratic degrees of 
+     freedom. This means that they system has two degrees of freedom.
 
    potential energy
      *symbol*: :math:`U` --
@@ -133,15 +161,6 @@ ________
     *Definition*:Mixing ratio of liquid water. The ratio of the mass,in
     grams, of liquid water to the mass, in Kg, of dry air.
 
-   helmholtz free energy
-    *symbol*: :math:`f` --
-    *units*: :math:`J`  -- 
-    *Notes*: --  
-    *Text*: p. 111
-
-    *Definition*: Thermodynamic potential that measures the 
-    "useful" work obtainable from a closed thernodynamic system
-    at a constant tempreature and volume.
 
 
    Dewpoint Temperature
