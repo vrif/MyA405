@@ -97,3 +97,20 @@ ________
      The ratio of the mass of saturated water vapor over mass of dry air.
      i.e. :math:`e_{sat}/p_{dry}`
 
+    wl
+     *symbol*: :math:`w_l` --
+     *units*: :math:`g/kg`  -- 
+     *Notes*: --  
+     *Text*: p. 80
+
+     *Definition*:Mixing ratio of liquid water. The ratio of the mass,in
+      grams, of liquid water to the mass, in Kg, of dry air.
+
+    Dewpoint Temperature
+     *symbol*: :math:`T_d` --
+     *units*: :math:`K`  -- 
+     *Notes*: `vapor notes`_ --  
+     *Text*: p. 82
+
+     *Definition*: The temperature to which air must be cooled, at constant
+      pressure, to become saturated and condense.
