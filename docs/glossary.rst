@@ -10,9 +10,9 @@ ________
    Chemical potential
      *symbol*: :math:`\mu`--
      *units*: energy/particle
+
      *Definition*: The potential that a substance has to produce in order to 
-     	alter a system. It is defined as:
-			:math:`\mu \equiv -T (ds/dN)`
+     alter a system. It is defined as: :math:`\mu \equiv -T (ds/dN)`
 
      
 
@@ -38,7 +38,7 @@ ________
    entropy
      *symbol*: :math:`s` --
      *units*: :math:`J kg^{-1} K^{-1}`  -- 
-     *Notes*: `entropy and equivalent temperature notes, Clausius-Clapeyron notes`_ --  
+     *Notes*: `entropy and equivalent temperature notes`_, `Clausius-Clapeyron notes`_ --  
      *Text*: p. 95-97 and 100-101 (has a more general take on entropy)
 
      *Definition*: A measure of the randomness or disorder in a system.
@@ -69,7 +69,7 @@ ________
    potential energy
      *symbol*: :math:`U` --
      *units*: :math:`J` --
-     *Notes*: `internal energy notes (mentioned)`_ --
+     *Notes*: `internal energy notes`_ (mentioned) --
      *Text*:  --
 
      *Definition*: The energy stored in a system as a result of their
