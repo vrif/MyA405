@@ -97,3 +97,22 @@ ________
      The ratio of the mass of saturated water vapor over mass of dry air.
      i.e. :math:`e_{sat}/p_{dry}`
 
+   geopotential height
+     *symbol*: :math:`Z` --
+     *units*: :math:`km`  -- 
+     *Notes*: --  
+     *Text*: p. 69
+
+     *Definition*: A vertical coordinate adjusted from geometric 
+     height(elevation from mean sea level) based on the variation
+     of gravitational potential.
+
+   helmholtz free energy
+     *symbol*: :math:`f` --
+     *units*: :math:`J`  -- 
+     *Notes*: --  
+     *Text*: p. 111
+
+     *Definition*: Thermodynamic potential that measures the 
+     "useful" work obtainable from a closed thernodynamic system
+     at a constant tempreature and volume.
