@@ -118,34 +118,37 @@ ________
    geopotential height
      *symbol*: :math:`Z` --
      *units*: :math:`km`  -- 
-    wl
-     *symbol*: :math:`w_l` --
-     *units*: :math:`g/kg`  -- 
-     *Notes*: --  
      *Text*: p. 69
-     *Text*: p. 80
 
      *Definition*: A vertical coordinate adjusted from geometric 
      height(elevation from mean sea level) based on the variation
      of gravitational potential.
 
+   wl
+    *symbol*: :math:`w_l` --
+    *units*: :math:`g/kg`  -- 
+    *Notes*: --  
+    *Text*: p. 80
+
+    *Definition*:Mixing ratio of liquid water. The ratio of the mass,in
+    grams, of liquid water to the mass, in Kg, of dry air.
+
    helmholtz free energy
-     *symbol*: :math:`f` --
-     *units*: :math:`J`  -- 
-     *Notes*: --  
-     *Text*: p. 111
+    *symbol*: :math:`f` --
+    *units*: :math:`J`  -- 
+    *Notes*: --  
+    *Text*: p. 111
 
-     *Definition*: Thermodynamic potential that measures the 
-     *Definition*:Mixing ratio of liquid water. The ratio of the mass,in
-      grams, of liquid water to the mass, in Kg, of dry air.
+    *Definition*: Thermodynamic potential that measures the 
+    "useful" work obtainable from a closed thernodynamic system
+    at a constant tempreature and volume.
 
-    Dewpoint Temperature
-     *symbol*: :math:`T_d` --
-     *units*: :math:`K`  -- 
-     *Notes*: `vapor notes`_ --  
-     *Text*: p. 82
 
-     *Definition*: The temperature to which air must be cooled, at constant
-      pressure, to become saturated and condense.
-     "useful" work obtainable from a closed thernodynamic system
-     at a constant tempreature and volume.
+   Dewpoint Temperature
+    *symbol*: :math:`T_d` --
+    *units*: :math:`K`  -- 
+    *Notes*: `vapor notes`_ --  
+    *Text*: p. 82
+
+    *Definition*: The temperature to which air must be cooled, at constant
+    pressure, to become saturated and condense.
