@@ -29,9 +29,10 @@ ________
    entropy
      *symbol*: :math:`s` --
      *units*: :math:`J kg^{-1} K^{-1}`  -- 
-     *Notes*: `entropy and equivalent temperature notes`_ --  
-     *Text*: p. 100-101
+     *Notes*: `entropy and equivalent temperature notes, Clausius-Clapeyron notes`_ --  
+     *Text*: p. 95-97 and 100-101 (has a more general take on entropy)
 
+     *Definition*: A measure of the randomness or disorder in a system.
 
    equivalent potential temperature
      *symbol*: :math:`\theta_e` --
@@ -56,6 +57,14 @@ ________
      *Notes*: `moist static energy notes`_
      *Text*: p. 86
 
+   potential energy
+     *symbol*: :math:`U` --
+     *units*: :math:`J` --
+     *Notes*: `internal energy notes (mentioned)`_ --
+     *Text*:  --
+
+     *Definition*: The energy stored in a system as a result of their
+     position based on their frame of reference.
 
    virtual temperature 
      *symbol*: :math:`T_v` --
