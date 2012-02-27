@@ -7,6 +7,15 @@ ________
 
 .. glossary::
 
+   Chemical potential
+     *symbol*: :math:`\mu`--
+     *units*: energy/particle
+     *Definition*: The potential that a substance has to produce in order to 
+     	alter a system. It is defined as:
+			:math:`\mu \equiv -T (ds/dN)`
+
+     
+
    esat
      *symbol*: :math:`e_s` --
      *units*: :math:`Pa`  -- 
