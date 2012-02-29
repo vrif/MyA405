@@ -171,3 +171,27 @@ ________
 
     *Definition*: The temperature to which air must be cooled, at constant
     pressure, to become saturated and condense.
+
+ moist static energy
+     *symbol*: :math:`h_m` or :math:`h_{mse}` --
+     *units*: :math:`J kg^{-1}`  -- 
+     *Notes*: `moist static energy notes`_
+     *Text*: p. 86
+
+   Gibbs Free Energy
+     *symbol*: :math:`g` --
+     *units*: :math:`J kg^{-1}`  -- 
+     *Notes*: `First Law of Thermodynamics notes`_
+     *Text*: 	p. 210
+     *Description*: thermodynamic function of state, which is 
+     constant during a reversible isobaric-isothermal process. 
+     The most important such process in meteorology is the change in phase 
+     of water substance.
+
+   Heat
+     *symbol*: :math: `q` --
+     *units*: :math:`J kg^{-1}`  -- 
+     *Notes*: `First Law of Thermodynamics notes`_
+     *Text*: 	p. 72, 75
+     *Description*: A form of energy transferred between systems, existing 
+      only in the process of transfer.
