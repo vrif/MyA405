@@ -12,8 +12,9 @@ ________
      *units*: energy/particle
 
      *Definition*: The potential that a substance has to produce in order to 
-     alter a system. It is defined as: :math:`\mu \equiv -T (ds/dN)`
-
+     alter a system. It is defined as: :math:`\mu \equiv -T (dS/dN)` (J/molecule)
+     and is the Gibbs free energy per molecule (see the Day 24 `maxwell notes`_
+     for a discussion).
      
 
    esat
@@ -153,35 +154,30 @@ ________
      of gravitational potential.
 
    wl
-    *symbol*: :math:`w_l` --
-    *units*: :math:`g/kg`  -- 
-    *Notes*: --  
-    *Text*: p. 80
+     *symbol*: :math:`w_l` --
+     *units*: :math:`g/kg`  -- 
+     *Notes*: --  
+     *Text*: p. 80
 
-    *Definition*:Mixing ratio of liquid water. The ratio of the mass,in
-    grams, of liquid water to the mass, in Kg, of dry air.
+     *Definition*:Mixing ratio of liquid water. The ratio of the mass,in
+     grams, of liquid water to the mass, in Kg, of dry air.
 
 
 
    Dewpoint Temperature
-    *symbol*: :math:`T_d` --
-    *units*: :math:`K`  -- 
-    *Notes*: `vapor notes`_ --  
-    *Text*: p. 82
+     *symbol*: :math:`T_d` --
+     *units*: :math:`K`  -- 
+     *Notes*: `vapor notes`_ --  
+     *Text*: p. 82
 
-    *Definition*: The temperature to which air must be cooled, at constant
-    pressure, to become saturated and condense.
+     *Definition*: The temperature to which air must be cooled, at constant
+     pressure, to become saturated and condense.
 
- moist static energy
-     *symbol*: :math:`h_m` or :math:`h_{mse}` --
-     *units*: :math:`J kg^{-1}`  -- 
-     *Notes*: `moist static energy notes`_
-     *Text*: p. 86
 
    Gibbs Free Energy
      *symbol*: :math:`g` --
      *units*: :math:`J kg^{-1}`  -- 
-     *Notes*: `First Law of Thermodynamics notes`_
+     *Notes*: `internal energy notes`_
      *Text*: 	p. 210
      *Description*: thermodynamic function of state, which is 
      constant during a reversible isobaric-isothermal process. 
@@ -191,7 +187,7 @@ ________
    Heat
      *symbol*: :math: `q` --
      *units*: :math:`J kg^{-1}`  -- 
-     *Notes*: `First Law of Thermodynamics notes`_
+     *Notes*: `internal energy notes`_
      *Text*: 	p. 72, 75
      *Description*: A form of energy transferred between systems, existing 
-      only in the process of transfer.
+     only in the process of transfer.
