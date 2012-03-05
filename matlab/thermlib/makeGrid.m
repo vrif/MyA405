@@ -33,5 +33,5 @@ function [xplot,yplot,temp,thetaVals,thetaeVals,ws]=makeGrid(skew)
           thetaeVals(i,j)=thetaep(Tk,Tk,press); %thetae labels
        end
     end
-fprintf('through makeGrid\n')
+%fprintf('through makeGrid\n')
 end

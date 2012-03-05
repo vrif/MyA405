@@ -22,10 +22,10 @@ function [figureHandle,outputws,handlews]=makeSkew(figHandle,skew)
     title('skew T - lnp chart');
     ylabel('pressure (hPa)');
     xlabel('temperature (black, degrees C)');
-    wsLabels=[0.1,0.25,0.5,1,2,3,4:2:20,24,28]
+    wsLabels=[0.1,0.25,0.5,1,2,3,4:2:20,24,28];
     [outputws,handlews]=contour(xplot,yplot,ws*1.e3,wsLabels,'g');
     clabel(outputws,handlews);
-    thetaeLabels= [300,310,320,330,340,350,360,380,400]
+    thetaeLabels= [300,310,320,330,340,350,360,380,400];
     [output,handle]=contour(xplot,yplot,thetaeVals,thetaeLabels,'r');
     clabel(output,handle); 
     TempTickLabels=-25:5:30;
