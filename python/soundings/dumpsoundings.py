@@ -14,7 +14,7 @@ import glob
 import matplotlib.pyplot as plt
 import pickle
 
-listfiles=glob.glob('nm*txt')
+listfiles=glob.glob('spr*txt')
 sounding_times=[]
 for a_file in listfiles:
     print "*"*60

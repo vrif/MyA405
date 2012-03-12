@@ -9,7 +9,7 @@ import dateutil
 import datetime
 from netCDF3 import Dataset
 
-picfile='s_alburqurque.pic'
+picfile=glob.glob('lin*.pic')[0]
 picfile=open(picfile,'r')
 the_data=pickle.load(picfile)
 
@@ -25,7 +25,7 @@ array_list.sort()
 the_dates=[item[1] for item in array_list]
 
 try:
-    ncfile=Dataset('soundings.nc','ws','NETCDF3_CLASSIC')
+    ncfile=Dataset('output.nc','ws','NETCDF3_CLASSIC')
 except:
     os.unlink('output.nc')
     ncfile=Dataset('output.nc','ws','NETCDF3_CLASSIC')
@@ -61,8 +61,10 @@ ncfile.createDimension('var_cols',6)
 varnames=[add_var(ncfile,item[2],item[1]) for item in keep_arrays]
 
 col_names=array_list[0][2].dtype.names
-col_units=[array_list[0][2].dtype.fields[name][2] for name in col_names]
-col_units=[item.split('_')[1] for item in col_units]
+a=[(item[0],item[1]) for item in array_list[0][2].dtype.fields.items()]
+col_names=[item[0] for item in a]
+col_dtypes=[item[1] for item in a]
+col_units=[item[2] for item in col_dtypes]
 ncfile.units=','.join(col_units)
 ncfile.col_names=','.join(col_names)
     
