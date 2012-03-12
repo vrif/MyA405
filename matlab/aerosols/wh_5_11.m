@@ -43,54 +43,6 @@ print -depsc  Dndist.eps;
 
 end
 
-% $$$ 
-% $$$ %plot number distribution
-% $$$ fh=figure(2);
-% $$$ clf;
-% $$$ semilogx(themass,themass.*ndist);
-% $$$ title('n(m) for lognormal mass distribution');
-% $$$ xlabel('aerosol mass (kg)');
-% $$$ ylabel('m \times ndist (number/m^3/per log binwidth)');
-% $$$ print -dpng -r150 mndist.png;
-% $$$ print -depsc mndist.eps;
-% $$$ 
-% $$$ ndiam=ndist(2:end).*diff(themass)./diff(drydiam);
-% $$$ 
-% $$$ fh=figure(3);
-% $$$ clf;
-% $$$ %note the units: microns for diameter, #/cc/logbinwidth for ndiam
-% $$$ semilogx(drydiam(2:end).*1.e6,drydiam(2:end).*ndiam);
-% $$$ title('ndiam(D) for lognormal mass distribution');
-% $$$ xlabel('aerosol diameter (microns)');
-% $$$ ylabel('D \times ndist (number/cm^3/per log binwidth)');
-% $$$ print -dpng -r150 Dndiam.png;
-% $$$ print -depsc Dndiam.eps;
-% $$$ Ntot=sum(ndiam.*diff(drydiam));
-% $$$ %1.e-6 converts from m^3 to cm^3
-% $$$ fprintf('check the total number/cm^3: %8.2f\n',Ntot*1.e-6)
-% $$$ 
-% $$$ 
-% $$$ Nbins=ndiam.*diff(drydiam);
-% $$$ N=cumsum(Nbins);
-% $$$ N=fliplr(N);
-% $$$ fh=figure(4);
-% $$$ clf;
-% $$$ %note the units: microns for diameter, #/cc/logbinwidth for ndiam
-% $$$ semilogx(drydiam(2:end).*1.e6,N);
-% $$$ title('ndiam(D) for lognormal mass distribution');
-% $$$ xlabel('aerosol diameter (microns)');
-% $$$ ylabel('D \times ndist (number/cm^3/per log binwidth)');
-% $$$ print -dpng -r150 N.png;
-% $$$ print -depsc N.eps;
-% $$$ Ntot=sum(N.*diff(drydiam));
-% $$$ %1.e-6 converts from m^3 to cm^3
-% $$$ fprintf('check the total number/cm^3: %8.2f\n',Ntot*1.e-6)
-% $$$ 
-% $$$ 
-% $$$ end
-% $$$ 
-% $$$ 
-
 function sdist=logDist(theDiam,Stot,meanDiam,logsd);
    %sdist=logDist(theDiam,Stot,meanval,logsd)
    %return a vector with the surface are (m^2/m^3) in each bin specified by
