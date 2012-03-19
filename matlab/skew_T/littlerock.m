@@ -1,42 +1,40 @@
-function findcape
+function littlerock
    %plot a sounding 
-    filename='springfield.nc';
     filename='littlerock.nc';
-    file_struct=nc_info(filename)
+    fprintf('reading file: %s\n',filename);
+    file_struct=nc_info(filename);
     c=constants;
     %
-    % grap the first sounding pressure and temperature
+    % grab the March 2 12Z sounding
     %
-    sound_var = file_struct.Dataset(4).Name
-    fprintf('found: %s\n',sound_var);
+    sound_var = file_struct.Dataset(4).Name;
+    fprintf('found sounding: %s\n',sound_var);
     press=nc_varget(filename,sound_var,[0,0],[Inf,1]);
     temp=nc_varget(filename,sound_var,[0,2],[Inf,1]);
     dewpoint=nc_varget(filename,sound_var,[0,3],[Inf,1]);
     fh=figure(1);
-    semilogy(temp,press)
+    semilogy(temp,press);
     hold on;
-    semilogy(dewpoint,press)
+    semilogy(dewpoint,press);
     set(gca,'yscale','log','ydir','reverse');
     ylim([400,1000]);
-    ylabel('press (hPa)')
-    xlabel('Temp (deg C)')
-    title('sounding 1')
+    ylabel('press (hPa)');
+    xlabel('Temp (deg C)');
+    title('sounding 1');
     hold off;
-    figHandle=figure(2)
-    skew=30.
+    figHandle=figure(2);
+    skew=30.;
     [figHandle,outputws,handlews]=makeSkew(figHandle,skew);
-    xtemp=convertTempToSkew(temp,press,skew);    
-    xdew=convertTempToSkew(dewpoint,press,skew);    
+    xtemp=convertTempToSkew(temp,press,skew);
+    xdew=convertTempToSkew(dewpoint,press,skew);
     semilogy(xtemp,press,'g-','linewidth',5);
     semilogy(xdew,press,'b-','linewidth',5);
-    [xTemp,thePress]=ginput(1);
-    Tclick=convertSkewToTemp(xTemp,thePress,skew);    
-    thetaeVal=thetaes(Tclick + c.Tc,thePress*100.);
-    [pressVals,tempVals]=calcAdiabat(thePress*100.,thetaeVal,400.e2);
+    %use lowest sounding level for adiabat
+    thetaeVal=thetaes(temp(1) + c.Tc,press(1)*100.);
+    [pressVals,tempVals]=calcAdiabat(press(1)*100.,thetaeVal,400.e2);
     xTemp=convertTempToSkew(tempVals - c.Tc,pressVals*1.e-2,skew);
-    fprintf('ready to draw moist adiabat, thetae=%8.2f\n',thetaeVal);
     semilogy(xTemp,pressVals*1.e-2,'r-','linewidth',5);
-    ylim([400,1000.])
+    ylim([400,1000.]);
     xleft=convertTempToSkew(-20,1.e3,skew);
     xright=convertTempToSkew(25.,1.e3,skew);
     xlim([xleft,xright]);
@@ -51,29 +49,29 @@ function findcape
     xTemp=convertTempToSkew(trytemp,pressVals*1.e-2,skew);
     semilogy(xTemp,pressVals*1.e-2,'b.','markersize',5);
     hold off;
-    pressLevs=linspace(400,950,100)*1.e2;
+    pressLevs=linspace(400,press(1),100)*1.e2;
     %
-    % start integrating from 950 upwards
+    % starting integrating from first sounding level
     %
     pressLevs=fliplr(pressLevs);
     TvDiffHandle=@(pVals) calcTvDiff(pVals,thetaeVal,interpTenv,interpTdEnv);
     for i=1:numel(pressLevs)
        Tvdiff(i)=TvDiffHandle(pressLevs(i));
     end
-    figure(3)
+    figure(3);
     clf;
     plot(Tvdiff,pressLevs*0.01,'k-');
     set(gca,'ydir','reverse');
     ylabel('pressure (hPa)');
     xlabel('Virtual temperature difference (K)');
-    title('Tvdiff vs. pressure')
+    title('Tvdiff vs. pressure');
     cumCAPE= -c.Rd*cumsum(Tvdiff(2:end).*diff(log(pressLevs)));
-    figure(4)
+    figure(4);
     clf;
     plot(cumCAPE,pressLevs(2:end)*0.01,'k-');
-    title('cumulative CAPE (J/kg) vs. pressure (hPa)')
+    title('cumulative CAPE (J/kg) vs. pressure (hPa)');
     set(gca,'ydir','reverse');
-    figure(5)
+    figure(5);
     clf;
     %
     % equate kinetic and potential energy toget maximum
@@ -110,10 +108,3 @@ function TvDiff=calcTvDiff(press,thetae0,interpTenv,interpTdEnv)
     TvDiff=Tvcloud - Tvenv;
 end
 
-    
-% $$$         double Mar-17-2011-00Z(dim_138, var_cols) ;
-% $$$         double Mar-17-2011-12Z(dim_139, var_cols) ;
-% $$$         double Mar-18-2011-00Z(dim_128, var_cols) ;
-% $$$         double Mar-18-2011-12Z(dim_142, var_cols) ;
-% $$$         double Mar-19-2011-00Z(dim_39, var_cols) ;
-        

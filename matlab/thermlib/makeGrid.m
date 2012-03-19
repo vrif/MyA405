@@ -7,7 +7,6 @@ function [xplot,yplot,temp,thetaVals,thetaeVals,ws]=makeGrid(skew)
     xplot=[-300:1:-140];
     [rows,pvals]=size(yplot);
     [rows,tvals]=size(xplot);
-    [pvals,tvals]
     temp=zeros([pvals,tvals]);
     thetaVals=zeros([pvals,tvals]);
     thetaeVals=zeros([pvals,tvals]);

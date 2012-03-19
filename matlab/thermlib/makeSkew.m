@@ -27,7 +27,7 @@ function [figureHandle,outputws,handlews]=makeSkew(figHandle,skew)
     clabel(outputws,handlews);
     thetaeLabels= [300,310,320,330,340,350,360,380,400];
     [output,handle]=contour(xplot,yplot,thetaeVals,thetaeLabels,'r');
-    clabel(output,handle); 
+    clabel(output,handle);
     TempTickLabels=-25:5:30;
     TempTickCoords=TempTickLabels;
     skewTickCoords=convertTempToSkew(TempTickCoords,1.e3,skew);
